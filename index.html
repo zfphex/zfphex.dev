@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style>
+    body {
+        font-family: monospace;
+        font-size: 360px;
+        background-color: rgb(34, 34, 34);
+        color: white;
+    }
+
+    div {
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
+        animation: text 30s linear infinite;
+        text-shadow: 10px 10px 20px black;
+
+    }
+
+    @keyframes text {
+        0% {
+            transform: translate(-50%, -50%) rotateX(0deg) rotateY(0deg);
+        }
+
+        50% {
+            transform: translate(-50%, -50%) rotateX(0deg) rotateY(360deg);
+        }
+
+        100% {
+            transform: translate(-50%, -50%) rotateX(0deg) rotateY(0deg);
+        }
+    }
+</style>
+
+<body>
+    <div>
+        SOON&#8482
+    </div>
+</body>
+
+</html>

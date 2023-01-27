@@ -25,7 +25,7 @@
         left: 50%;
         transform: translate(-50%, -50%);
         margin: 0;
-        animation: text 30s linear infinite;
+        animation: text 10s linear infinite;
         text-shadow: 10px 10px 20px black;
 
     }
@@ -35,8 +35,16 @@
             transform: translate(-50%, -50%) rotateX(0deg) rotateY(0deg);
         }
 
-        50% {
+        25% {
             transform: translate(-50%, -50%) rotateX(180deg) rotateY(360deg);
+        }
+
+        50% {
+            transform: translate(-50%, -50%) rotateX(360deg) rotateY(360deg);
+        }
+
+        75% {
+            transform: translate(-50%, -50%) rotateX(-180deg) rotateY(360deg);
         }
 
         100% {

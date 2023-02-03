@@ -15,53 +15,93 @@
         color: white;
         overflow: hidden;
         margin: 0;
-        font-size: calc(16vw + 4vh + 2vmin);
     }
 
-    div {
-        text-align: center;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+    .text {
+        font-size: 14vw;
         margin: 0;
-        animation: text 20s linear infinite alternate;
+        padding: 0;
+        /* animation: text 10s linear infinite alternate; */
         text-shadow: 10px 10px 20px black;
-
+        word-wrap: break-word;
+        text-align: center;
+        line-height: 14vh;
     }
 
     @keyframes text {
         0% {
-            transform: translate(-50%, -50%) rotateX(0deg) rotateY(0deg);
-            top: 0%;
-        }
-
-        25% {
-            transform: translate(-50%, -50%) rotateX(180deg) rotateY(360deg);
-            top: 50%;
-        }
-
-        50% {
-            transform: translate(-50%, -50%) rotateX(360deg) rotateY(360deg);
-            top: 100%;
-        }
-
-        75% {
-            transform: translate(-50%, -50%) rotateX(-180deg) rotateY(360deg);
-            top: 50%;
+            transform: rotateX(0deg) rotateY(0deg);
         }
 
         100% {
-            transform: translate(-50%, -50%) rotateX(0deg) rotateY(0deg);
-            top: 0%;
+            transform: rotateX(360deg) rotateY(360deg);
         }
+    }
+
+    body {
+        overflow: hidden;
+        padding: 0;
+        margin: 0;
+    }
+
+    #section {
+        position: relative;
+    }
+
+    #logo {
+        position: absolute;
+
     }
 </style>
 
 <body>
-    <div>
+    <span id="logo" class="text">
         SOON&#8482
-    </div>
+    </span>
+    <!-- <svg id="logo" style="width: 200px" viewBox="0 0 16 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M7.4 4.959C3.268 4.959 0 5.509 0 6.186C0 6.864 3.268 7.413 7.4 7.413C11.532 7.413 14.943 6.864 14.943 6.186C14.944 5.508 11.533 4.959 7.4 4.959ZM7.263 6.51C6.306 6.51 5.53 6.273 5.53 5.98C5.53 5.687 6.306 5.45 7.263 5.45C8.22 5.45 8.995 5.687 8.995 5.98C8.995 6.273 8.219 6.51 7.263 6.51ZM13.319 0.052002H9.701L7.769 2.291L6.849 0.0830021H1.145L0.933 1.045H3.202C3.202 1.045 4.239 0.909002 4.273 1.739C4.273 3.177 1.897 3.055 1.897 3.055L2.341 1.555H0.869L0.194 3.988H2.862C2.862 3.988 5.683 3.738 5.683 1.77C5.683 1.77 5.797 1.196 5.749 0.943002L7.124 4.62L10.559 1.055H13.165C13.165 1.055 13.963 1.123 13.963 1.74C13.963 3.178 11.604 3.028 11.604 3.028L11.969 1.556H10.682L9.946 3.989H12.399C12.399 3.989 15.465 3.799 15.465 1.71C15.465 1.709 15.404 0.052002 13.319 0.052002Z" />
+    </svg> -->
 </body>
+
+<script>
+    const section = document.getElementById("section");
+    const logo = document.getElementById("logo");
+    const FPS = 60;
+
+    let xSpeed = 4;
+    let ySpeed = 4;
+
+    logo.style.color = randomColor();
+    logo.style.left = Math.floor(Math.random() * (window.innerWidth - logo.clientWidth)) + "px";
+    logo.style.top = Math.floor(Math.random() * (window.innerHeight - logo.clientHeight)) + "px";
+
+    function randomColor() {
+        return "#" + Math.random().toString(16).slice(2, 8).toUpperCase();
+    }
+
+    setInterval(() => {
+        let left = parseInt(logo.style.left, 10);
+        let top = parseInt(logo.style.top, 10);
+
+        if (left + logo.clientWidth >= window.innerWidth || left <= 0) {
+            xSpeed = -xSpeed;
+            logo.style.color = randomColor();
+        }
+
+        if (top + logo.clientHeight >= window.innerHeight || top <= 0) {
+            ySpeed = -ySpeed;
+            logo.style.color = randomColor();
+        }
+
+        logo.style.left = left + xSpeed + "px";
+        logo.style.top = top + ySpeed + "px";
+    }, 1000 / FPS);
+
+    window.addEventListener("resize", () => {
+        logo.style.left = Math.floor(Math.random() * (window.innerWidth - logo.clientWidth)) + "px";
+        logo.style.top = Math.floor(Math.random() * (window.innerHeight - logo.clientHeight)) + "px";
+    });
+</script>
 
 </html>

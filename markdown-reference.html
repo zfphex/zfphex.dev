@@ -48,8 +48,6 @@
         object-fit: contain;
     }
 
-    /* TODO: Now that the title is a link to the home page. */
-    /* Add some kind of highlight to show the user can click on it. */
     #title {
         font-size: 44px;
         font-weight: bold;
@@ -57,6 +55,10 @@
         line-height: 100%;
         margin-top: 16px;
         margin-bottom: 0;
+    }
+
+    #title:hover {
+        color: var(--neutral-400)
     }
 
     #title:before {
@@ -105,6 +107,7 @@
 <tr><td>Sub-heading 3</td><td>Item 3</td></tr>
 <tr><td>Sub-heading 4</td><td>Item 4</td></tr>
 </tbody></table>
+</br>
 <table><thead><tr><th style="text-align: left">Left aligned Header</th><th style="text-align: right">Right aligned Header</th><th style="text-align: center">Center aligned Header</th></tr></thead><tbody>
 <tr><td style="text-align: left">Content Cell</td><td style="text-align: right">Content Cell</td><td style="text-align: center">Content Cell</td></tr>
 <tr><td style="text-align: left">Content Cell</td><td style="text-align: right">Content Cell</td><td style="text-align: center">Content Cell</td></tr>
@@ -195,8 +198,6 @@
 </span></code></pre>
 <hr />
 <p><lite-youtube style="border-radius: 18px;" videoid="jNQXAC9IVRw"></lite-youtube></p>
-<p><strong>Image</strong></p>
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Colosseo_2020.jpg/1200px-Colosseo_2020.jpg" width="500" height="auto" />
 <p><strong>Centered Image</strong></p>
 <img class="center" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Colosseo_2020.jpg/1200px-Colosseo_2020.jpg" width="500" height="auto" />
 

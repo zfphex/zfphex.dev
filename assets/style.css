@@ -283,7 +283,7 @@
  code,
  pre {
      font-family: jetbrains;
-     font-size: 14px;
+     font-size: 16px;
  }
 
  code {
@@ -310,6 +310,12 @@
      overflow: hidden;
  }
 
+ /* Math */
+
+ span>.katex {
+     font-size: 28px;
+ }
+
  /* Footnotes */
 
  .footnote-definition {
@@ -330,17 +336,6 @@
 
  .footnote-definition>p {
      margin: 0;
- }
-
- #top-bar {
-     border-top: 4px solid;
-     border-image-source: linear-gradient(90deg, var(--fuchsia-900), var(--fuchsia-400), var(--fuchsia-900));
-     border-image-slice: 1;
-     position: fixed;
-     top: 0;
-     right: 0;
-     left: 0;
-     z-index: 999;
  }
 
  #grid {

@@ -2,99 +2,89 @@
 <html lang="en">
 
 <head>
-    <title>Layout - zfphex.dev</title>
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Layout - zfphex.dev</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="preload" href="assets/style.css" as="style" />
-    <link rel="stylesheet" href="assets/style.css" />
+  <link rel="preload" href="assets/style.css" as="style" />
+  <link rel="stylesheet" href="assets/style.css" />
 
-    <link rel="stylesheet" href="assets/katex/katex.min.css">
+  <link rel="stylesheet" href="assets/katex/katex.min.css" />
 
-    <script type="module" src="assets/lite-youtube.js"></script>
+  <script type="module" src="assets/lite-youtube.js"></script>
 
-    <script defer src="assets/katex/katex.min.js"></script>
-    <script defer src="assets/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            renderMathInElement(document.body, {
-                // customised options
-                // • auto-render specific keys, e.g.:
-                delimiters: [
-                    { left: '$$', right: '$$', display: true },
-                    { left: '$', right: '$', display: false },
-                    { left: '\\(', right: '\\)', display: false },
-                    { left: '\\[', right: '\\]', display: true }
-                ],
-                // • rendering keys, e.g.:
-                throwOnError: false
-            });
-        });
-    </script>
+  <script defer src="assets/katex/katex.min.js"></script>
+  <script defer src="assets/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      renderMathInElement(document.body, {
+        // customised options
+        // • auto-render specific keys, e.g.:
+        delimiters: [
+          { left: "$$", right: "$$", display: true },
+          { left: "$", right: "$", display: false },
+          { left: "\\(", right: "\\)", display: false },
+          { left: "\\[", right: "\\]", display: true },
+        ],
+        // • rendering keys, e.g.:
+        throwOnError: false,
+      });
+    });
+  </script>
 </head>
 
 <style>
-    a {
-        color: var(--sky-300);
-        border-bottom: 0;
-        padding-bottom: 0;
-    }
+  /* TODO: Check if old hyperlink styling looks better */
+  /* a {
+      color: var(--sky-300);
+      border-bottom: 0;
+      padding-bottom: 0;
+    } */
 
-    a:hover {
-        color: var(--neutral-400);
-    }
+  a:hover {
+    color: var(--neutral-400);
+  }
 
-    img {
-        object-fit: contain;
-    }
+  #title {
+    color: var(--text);
+  }
 
-    #title {
-        font-size: 44px;
-        font-weight: bold;
-        color: var(--text);
-        line-height: 100%;
-        margin-top: 16px;
-        margin-bottom: 0;
-    }
+  #title:hover {
+    color: var(--neutral-400);
+  }
 
-    #title:hover {
-        color: var(--neutral-400)
-    }
+  #title:before {
+    content: "";
+  }
 
-    #title:before {
-        content: "";
-    }
-
-    #metadata {
-        font-size: 18px;
-        color: var(--neutral-400);
-        letter-spacing: -0.5px;
-    }
-
-    .center {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
+  /* User can manually center images in their markdown files */
+  /* TODO: Maybe handle this for the user */
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 </style>
 
 <body>
-    <div id="grid">
-        <div id="left"></div>
-        <div id="center" style="padding: 0;"></div>
-        <div id="right"></div>
-        <div id="bottom-left"></div>
-        <div id="bottom-middle">
-            <div id="post">
-                <a id="title" href="index.html">
-                    Markdown Reference
-                    <div id="metadata">Posted <time>10th of February, 2025</time></div>
-                </a>
-                <p>Common text</p>
+  <div id="grid"
+    style="padding: 0; display: grid; grid-template-columns: 1fr minmax(0px, 950px) 1fr; grid-template-rows: 1fr auto">
+    <div></div>
+    <div style="border-radius: 6px; padding: 8px">
+      <div id="post">
+        <a id="title" href="index.html"
+          style="font-size: 44px; font-weight: bold; line-height: 100%; margin-top: 16px; margin-bottom: 0; border-bottom: 0; padding-bottom: 0">
+          Markdown Reference
+          <div style="font-size: 18px; color: var(--neutral-400); letter-spacing: -0.5px">
+            Posted <time>10th of February, 2025</time>
+          </div>
+        </a>
+        <p>Common text</p>
 <p><em>Emphasized text</em></p>
 <p><del>Strikethrough text</del></p>
 <p><strong>Strong text</strong></p>
 <p><strong><em>Strong emphasized text</em></strong></p>
+<p><a href="">Hyperlink text</a></p>
 <h1>H1</h1>
 <h2>H2</h2>
 <h3>H3</h3>
@@ -201,10 +191,9 @@
 <p><strong>Centered Image</strong></p>
 <img class="center" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Colosseo_2020.jpg/1200px-Colosseo_2020.jpg" width="500" height="auto" />
 
-            </div>
-        </div>
-        <div id="bottom-right"></div>
+      </div>
     </div>
+  </div>
 </body>
 
 </html>
